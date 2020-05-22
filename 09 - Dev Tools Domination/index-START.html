@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Console Tricks!</title>
 </head>
+
 <body>
 
   <p onClick="makeGreen()">×BREAK×DOWN×</p>
 
   <script>
-    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    const dogs = [{
+      name: 'Snickers',
+      age: 2
+    }, {
+      name: 'hugo',
+      age: 8
+    }];
 
     function makeGreen() {
       const p = document.querySelector('p');
@@ -18,29 +26,57 @@
     }
 
     // Regular
+    console.log("hello");
 
     // Interpolated
+    console.log("I am %d years old", 19);
 
     // Styled
 
-    // warning!
+    console.log("%c styled text yay", "font-size: 20px; color: blue;");
 
+    // warning!
+    console.warn("Oh NO")
     // Error :|
+
+    console.error("shit man!");
 
     // Info
 
+    console.info('infoo biatch tell me why');
+
     // Testing
+    p = document.querySelector("p");
+
+
+    console.assert(p.classList.contains("blah"), "beep wrong! BIG NO")
 
     // clearing
 
+    console.clear();
+
     // Viewing DOM Elements
+    console.dir(p);
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`the name is ${dog.name}`);
+      console.log(`age would be ${dog.age}`);
+
+      console.groupEnd(`${dog.name}`);
+
+    })
 
     // counting
+    console.count("wes");
+    console.count("wes");
+    console.count("wes");
+    console.count("wes");
+    console.count("wes");
 
     // timing
-
   </script>
 </body>
+
 </html>
