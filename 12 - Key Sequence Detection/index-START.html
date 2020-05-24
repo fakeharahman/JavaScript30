@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Key Detection</title>
   <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
 </head>
+
 <body>
-<script>
-</script>
+  <script>
+    const seq = "fakeha";
+    const pressed = [];
+    let test = "";
+
+    window.addEventListener("keyup", (e) => {
+      pressed.push(e.key);
+      pressed.splice(-seq.length - 1, pressed.length - seq.length);
+      test = pressed.join("");
+
+      if (test.includes(seq)) {
+        console.log("youre correct");
+        //pressed.splice(0);
+        cornify_add();
+      }
+
+      console.log(e.key);
+
+    })
+  </script>
 </body>
+
 </html>
