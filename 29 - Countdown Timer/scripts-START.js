@@ -45,7 +45,7 @@ function startTimer() {
     timer(this.dataset.time);
 }
 buttons.forEach(button => button.addEventListener("click", startTimer));
-document.customForm.addEventListener("submit", function (e) {
+document.customForm.addEventListener("submit", function (e) { //if something has a name, you can directly select it by document.name
     e.preventDefault();
     const mins = this.minutes.value;
     const secs = mins * 60;
